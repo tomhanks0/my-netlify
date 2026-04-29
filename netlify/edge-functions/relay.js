@@ -18,7 +18,7 @@ const TARGET_BASE = (Netlify.env.get("MY_D") || "").replace(/\/$/, "");
 
 export default async function handler(request) {
   if (!TARGET_BASE) {
-    return new Response("Misconfigured: TARGET_DOMAIN is not set", { status: 500 });
+    return new Response("Misconfigured: MY_D is not set", { status: 500 });
   }
 
   try {
