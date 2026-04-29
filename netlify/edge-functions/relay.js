@@ -1,5 +1,3 @@
-const TARGET_BASE = (Netlify.env.get("TARGET_DOMAIN") || "").replace(/\/$/, "");
-
 const STRIP_HEADERS = new Set([
   "host",
   "connection",
@@ -15,6 +13,8 @@ const STRIP_HEADERS = new Set([
   "x-forwarded-proto",
   "x-forwarded-port",
 ]);
+
+const TARGET_BASE = (Netlify.env.get("TARGET_DOMAIN") || "").replace(/\/$/, "");
 
 export default async function handler(request) {
   if (!TARGET_BASE) {
