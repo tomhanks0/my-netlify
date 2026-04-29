@@ -14,7 +14,7 @@ const STRIP_HEADERS = new Set([
   "x-forwarded-port",
 ]);
 
-const TARGET_BASE = (Netlify.env.get("TARGET_DOMAIN") || "").replace(/\/$/, "");
+const TARGET_BASE = (Netlify.env.get("MY_D") || "").replace(/\/$/, "");
 
 export default async function handler(request) {
   if (!TARGET_BASE) {
